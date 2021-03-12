@@ -1,0 +1,12 @@
+{% extends 'expense/base.html' %}
+{% block content %}
+<p>
+    Confirm Deletion of "{{ income }}?"
+</p>
+<a class="btn btn-info" href="{% url 'home' %}">Cancel</a>
+<form method="post" action="">
+    {% csrf_token %}
+    <input class="btn btn-danger" type="submit" name="Confirm">
+</form>
+
+{% endblock %}

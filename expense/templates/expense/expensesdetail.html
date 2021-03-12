@@ -1,0 +1,115 @@
+{% extends "expense/base.html" %}
+{% block content %}
+<div class="text-container">
+    <h5 class="display-4">All your expenses in one place,</h5>
+</div>
+
+
+    <div class="row">
+        <div class="col-6 offset-md-1">
+                    <table class="table table-striped" border="1px" >
+            <thead>
+              <tr>
+                  <th>Date</th>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Category</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+               {% for expense in expenses %}
+                  <td>{{expense.date|date:"F d, Y"}}</td>
+                <td>{{ expense }}</td><td>{{ expense.amount }}</td><td>{{ expense.category }}</td><td align="center">
+
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-info" href="{% url 'update_expense' expense.id %}">Update</a>
+                  <a class="btn btn-sm btn-danger" href="{% url 'delete_expense' expense.id %}">Delete</a>
+                </div>
+
+              </td></tr>
+                {% endfor %}
+            </tbody>
+          </table>
+             <a href="{% url 'add_expense' %}" class="btn btn-primary" role="button">Add an expense</a>
+        </div>
+
+
+
+        <div class="col-md-4 offset-md-0">
+            <h3 class="display-4">Chart-view</h3>
+            <div class="chart">
+            <canvas id="myChart" width="100" height="100"></canvas>
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+            <!--ctx.canvas.parentNode.style.width = "200px";-->
+            <!--ctx.canvas.parentNode.style.height = "200px";-->
+
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: [{% for category in catlist %}'{{ category }}',{% endfor %}],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [{% for list in list %} {{ list }}, {% endfor %}],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(119, 158, 203, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(149, 125, 173, 0.2)',
+                            'rgba(200, 100, 87, 0.2)',
+                            'rgba(211, 139, 45, 0.2)',
+                            'rgba(215, 169, 40, 0.2)',
+                            'rgba(254, 145, 188, 0.2)',
+                            'rgba(109, 188, 190, 0.2)',
+                            'rgba(206, 207, 195, 0.2)',
+                            'rgba(229, 229, 231, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(149, 125, 173, 1)',
+                            'rgba(245, 154, 70, 0.2)',
+                            'rgba(200, 100, 87, 0.2)',
+                            'rgba(211, 139, 45, 0.2)',
+                            'rgba(215, 169, 40, 0.2)',
+                            'rgba(254, 145, 188, 0.2)',
+                            'rgba(109, 188, 190, 0.2)',
+                            'rgba(206, 207, 195, 0.2)',
+                            'rgba(229, 229, 231, 0.2)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                    scales: {
+                        yAxes: [{
+                            display: false,
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+            </script>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+{% endblock %}

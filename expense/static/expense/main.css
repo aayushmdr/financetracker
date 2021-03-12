@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+body{
+    background-color: #e5e5e5;
+
+
+}
+background-image: radial-gradient(farthest-corner at 45px 45px , #08c 0%, #00f7e1 100%)
+.navbar {
+    font-family: 'Roboto', sans-serif; !important;
+}
+.navbar-brand{
+    font-family: 'Pacifico', cursive; !important;
+    font-size: 20px;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+.navbar-nav.navbar-center a{
+    width: 110px;
+    text-align: center;
+}
+
+
+
+@media (min-width: 1200px) {
+    .container{
+        max-width: 950px;
+    }
+}
+.container{
+    display: grid;
+    justify-items: center;
+    padding-top: 20px;
+    background-color: #eff7f6;
+    margin-bottom: 10px;
+    border-radius: 25px;
+    box-shadow: -4px 5px 39px 6px rgba(30,30,60,0.25);
+}
+.card{
+    background-color: #eff7f6;
+}
+.chart-container{
+    display: grid;
+    justify-items: start;
+
+    border-radius: 25px;
+    box-shadow: 0px 15px 25px -4px rgba(30,30,60,0.25);
+}
+.text-container{
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.form-container{
+    display: flex;
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 15px 25px -4px rgba(30,30,60,0.25);
+}
+
+
+
+
+
+
+
+
+
+
+

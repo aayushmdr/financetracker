@@ -1,0 +1,37 @@
+<script type="text/javascript">
+
+$(".nav-link").on("click", function(){
+   $(".nav-link.active").removeClass("active");
+   $(this).addClass("active");
+});
+</script>
+
+
+
+<nav class="navbar sticky-top navbar-expand navbar-light">
+  <a class="navbar-brand" href="{% url 'home' %}">Expense Tracker</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="nav navbar-nav navbar-center">
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"><i class="fa fa-money" aria-hidden="true"></i>    Expenses</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#}"><i class="fa fa-usd" aria-hidden="true"></i>    Incomes
+            <div class="line"></div>
+    </ul>
+
+      <ul class="nav navbar-nav ml-auto">
+               {% if user.is_authenticated %}
+							<a class="nav-item nav-link" href="#">{{ request.user }}</a>
+							<a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+						{% else %}
+							<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+							<a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+						{% endif %}
+            </ul>
+  </div>
+</nav>

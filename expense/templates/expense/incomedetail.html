@@ -1,0 +1,40 @@
+{% extends "expense/base.html" %}
+
+{% block content %}
+
+<div class="container">
+
+  <table class="table table-striped" border="1px" >
+    <thead>
+      <tr>
+          <th>Date</th>
+        <th>Title</th>
+        <th>Amount</th>
+        <th>Category</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+       {% for income in incomes %}
+          <td>{{ income.date|date:"F d, Y" }}</td>
+        <td>{{ income }}</td><td>{{ income.amount }}</td><td>{{ income.category }}</td><td align="center">
+
+        <div class="btn-group">
+          <a class="btn btn-sm btn-info" href="{% url 'update_income' income.id %}">Update</a>
+          <a class="btn btn-sm btn-danger" href="{% url 'delete_income' income.id %}">Delete</a>
+        </div>
+
+      </td></tr>
+        {% endfor %}
+    </tbody>
+  </table>
+    <a href="{% url 'add_income' %}" class="btn btn-primary" role="button">Add an income</a>
+
+</div>
+
+
+
+
+
+{% endblock %}
