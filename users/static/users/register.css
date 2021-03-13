@@ -1,0 +1,806 @@
+.mediaViewInfo {
+	--web-view-name: Register Page;
+	--web-view-id: Register_Page;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Register_Page;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Register_Page {
+	position: absolute;
+	width: 1920px;
+	height: 1080px;
+	background-color: rgba(248,248,248,1);
+	overflow: hidden;
+	--web-view-name: Register Page;
+	--web-view-id: Register_Page;
+	--web-scale-on-resize: true;
+	--web-enable-deep-linking: true;
+}
+#Path_30 {
+	opacity: 0.68;
+	fill: rgba(152,212,116,0.761);
+}
+.Path_30 {
+	overflow: visible;
+	position: absolute;
+	width: 618.795px;
+	height: 474.077px;
+	transform: matrix(1,0,0,1,1065.0562,326.9614) rotate(-62deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Path_31 {
+	opacity: 0.68;
+	fill: rgba(201,233,183,1);
+}
+.Path_31 {
+	overflow: visible;
+	position: absolute;
+	width: 268.1px;
+	height: 326.798px;
+	transform: matrix(1,0,0,1,-39.7349,844.4052) rotate(173deg);
+	transform-origin: center;
+	left: 0px;
+	top: 0px;
+}
+#Rectangle_1 {
+	fill: rgba(255,255,255,1);
+}
+.Rectangle_1 {
+	filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.161));
+	position: absolute;
+	overflow: visible;
+	width: 380px;
+	height: 480px;
+	left: 285px;
+	top: 337px;
+}
+.register-form{
+    position: absolute;
+	overflow: visible;
+	width: 300px;
+	height: 500px;
+	left: 285px;
+	top: 450px;
+}
+#logo {
+	position: absolute;
+	width: 241px;
+	height: 59px;
+	left: 140px;
+	top: 46px;
+	overflow: visible;
+}
+#Finance_Tracker_ {
+	left: 0px;
+	top: 0px;
+	position: absolute;
+	overflow: visible;
+	width: 242px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Pacifico;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 34px;
+	color: rgba(4,4,4,1);
+}
+#Component_2__1 {
+	position: absolute;
+	width: 125px;
+	height: 42px;
+	left: 1655px;
+	top: 55px;
+	overflow: visible;
+}
+#Rectangle_88 {
+	fill: rgba(152,212,116,1);
+}
+.Rectangle_88 {
+	position: absolute;
+	overflow: visible;
+	width: 125px;
+	height: 42px;
+	left: 0px;
+	top: 0px;
+}
+#Login {
+	left: 38px;
+	top: 9px;
+	position: absolute;
+	overflow: visible;
+	width: 51px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgba(255,255,255,1);
+}
+#undraw_Hello_qnas {
+	position: absolute;
+	width: 628.719px;
+	height: 522.458px;
+	left: 1037.781px;
+	top: 330.829px;
+	overflow: visible;
+}
+#Path_32 {
+	fill: rgba(63,61,86,1);
+}
+.Path_32 {
+	overflow: visible;
+	position: absolute;
+	width: 83.89px;
+	height: 114.397px;
+	left: 11.963px;
+	top: 348.508px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_33 {
+	fill: rgba(242,242,242,1);
+}
+.Path_33 {
+	overflow: visible;
+	position: absolute;
+	width: 35.169px;
+	height: 114.377px;
+	left: 35.521px;
+	top: 348.508px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Group_1 {
+	opacity: 0.7;
+	position: absolute;
+	width: 47.929px;
+	height: 42.603px;
+	left: 544.309px;
+	top: 191.263px;
+	overflow: visible;
+}
+#Path_34_u {
+	fill: url(#Path_34_u);
+}
+.Path_34_u {
+	overflow: visible;
+	position: absolute;
+	width: 47.929px;
+	height: 42.603px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_35 {
+	fill: rgba(152,212,116,1);
+}
+.Path_35 {
+	overflow: visible;
+	position: absolute;
+	width: 18.06px;
+	height: 18.06px;
+	left: 572.094px;
+	top: 200.062px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_36 {
+	opacity: 0.1;
+	fill: rgba(0,0,0,1);
+}
+.Path_36 {
+	overflow: visible;
+	position: absolute;
+	width: 18.06px;
+	height: 18.06px;
+	left: 572.094px;
+	top: 200.062px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_37 {
+	fill: rgba(152,212,116,1);
+}
+.Path_37 {
+	overflow: visible;
+	position: absolute;
+	width: 34.731px;
+	height: 38.899px;
+	left: 546.393px;
+	top: 193.116px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_38 {
+	opacity: 0.1;
+	fill: rgba(0,0,0,1);
+}
+.Path_38 {
+	overflow: visible;
+	position: absolute;
+	width: 10.246px;
+	height: 38.899px;
+	left: 568.1px;
+	top: 193.116px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_39 {
+	fill: rgba(238,238,238,1);
+}
+.Path_39 {
+	overflow: visible;
+	position: absolute;
+	width: 29.463px;
+	height: 25.403px;
+	left: 551.583px;
+	top: 166.334px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Line_1 {
+	fill: transparent;
+	stroke: rgba(224,224,224,1);
+	stroke-width: 8px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.Line_1 {
+	overflow: visible;
+	position: absolute;
+	width: 80.238px;
+	height: 228.685px;
+	left: 236.86px;
+	top: 240.217px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Group_2 {
+	opacity: 0.7;
+	position: absolute;
+	width: 241.487px;
+	height: 522.458px;
+	left: 133.631px;
+	top: 0px;
+	overflow: visible;
+}
+#Path_40_ {
+	fill: url(#Path_40_);
+}
+.Path_40_ {
+	overflow: visible;
+	position: absolute;
+	width: 241.487px;
+	height: 522.458px;
+	left: 0px;
+	top: 0px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ellipse_7 {
+	fill: rgba(0,0,0,1);
+}
+.Ellipse_7 {
+	position: absolute;
+	overflow: visible;
+	width: 100.551px;
+	height: 100.551px;
+	left: 153.766px;
+	top: 18.865px;
+}
+#Path_41 {
+	fill: rgba(152,212,116,1);
+}
+.Path_41 {
+	overflow: visible;
+	position: absolute;
+	width: 122.934px;
+	height: 99.068px;
+	left: 231.236px;
+	top: 128.372px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Line_2 {
+	fill: transparent;
+	stroke: rgba(189,189,189,1);
+	stroke-width: 5px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.Line_2 {
+	overflow: visible;
+	position: absolute;
+	width: 61.225px;
+	height: 148.436px;
+	left: 131.421px;
+	top: 325.406px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Line_3 {
+	fill: transparent;
+	stroke: rgba(189,189,189,1);
+	stroke-width: 5px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.Line_3 {
+	overflow: visible;
+	position: absolute;
+	width: 61.225px;
+	height: 148.436px;
+	left: 215.912px;
+	top: 325.406px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ellipse_8 {
+	fill: rgba(184,71,51,1);
+}
+.Ellipse_8 {
+	position: absolute;
+	overflow: visible;
+	width: 131.275px;
+	height: 35.612px;
+	left: 136.309px;
+	top: 308.647px;
+}
+#Ellipse_9 {
+	fill: rgba(245,95,68,1);
+}
+.Ellipse_9 {
+	position: absolute;
+	overflow: visible;
+	width: 131.275px;
+	height: 35.612px;
+	left: 136.309px;
+	top: 307.251px;
+}
+#Line_4 {
+	fill: transparent;
+	stroke: rgba(189,189,189,1);
+	stroke-width: 5px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.Line_4 {
+	overflow: visible;
+	position: absolute;
+	width: 63.402px;
+	height: 23.862px;
+	left: 174.327px;
+	top: 357.623px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Line_5 {
+	fill: transparent;
+	stroke: rgba(189,189,189,1);
+	stroke-width: 5px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.Line_5 {
+	overflow: visible;
+	position: absolute;
+	width: 63.402px;
+	height: 23.862px;
+	left: 167.636px;
+	top: 357.623px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_42 {
+	fill: rgba(152,212,116,1);
+}
+.Path_42 {
+	overflow: visible;
+	position: absolute;
+	width: 111.723px;
+	height: 142.447px;
+	left: 149.576px;
+	top: 127.097px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_43 {
+	fill: rgba(57,68,122,1);
+}
+.Path_43 {
+	overflow: visible;
+	position: absolute;
+	width: 111.723px;
+	height: 60.75px;
+	left: 149.576px;
+	top: 269.544px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_44 {
+	opacity: 0.05;
+	fill: rgba(0,0,0,1);
+}
+.Path_44 {
+	overflow: visible;
+	position: absolute;
+	width: 143.842px;
+	height: 97.228px;
+	left: 150.974px;
+	top: 136.705px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_45 {
+	fill: rgba(152,212,116,1);
+}
+.Path_45 {
+	overflow: visible;
+	position: absolute;
+	width: 143.842px;
+	height: 97.228px;
+	left: 150.974px;
+	top: 135.308px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_46 {
+	fill: rgba(253,165,125,1);
+}
+.Path_46 {
+	overflow: visible;
+	position: absolute;
+	width: 28.205px;
+	height: 9.776px;
+	left: 294.816px;
+	top: 222.76px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_47 {
+	fill: rgba(253,165,125,1);
+}
+.Path_47 {
+	overflow: visible;
+	position: absolute;
+	width: 17.469px;
+	height: 25.107px;
+	left: 342.299px;
+	top: 122.24px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_48 {
+	opacity: 0.05;
+	fill: rgba(0,0,0,1);
+}
+.Path_48 {
+	overflow: visible;
+	position: absolute;
+	width: 111.723px;
+	height: 3.491px;
+	left: 149.576px;
+	top: 269.544px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_49 {
+	fill: rgba(57,68,122,1);
+}
+.Path_49 {
+	overflow: visible;
+	position: absolute;
+	width: 133.152px;
+	height: 221.372px;
+	left: 227.919px;
+	top: 273.103px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_50 {
+	opacity: 0.1;
+	fill: rgba(0,0,0,1);
+}
+.Path_50 {
+	overflow: visible;
+	position: absolute;
+	width: 46.784px;
+	height: 44.689px;
+	left: 241.05px;
+	top: 287.001px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_51 {
+	fill: rgba(57,68,122,1);
+}
+.Path_51 {
+	overflow: visible;
+	position: absolute;
+	width: 120.567px;
+	height: 204.602px;
+	left: 190.076px;
+	top: 285.596px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_52 {
+	opacity: 0.05;
+	fill: rgba(0,0,0,1);
+}
+.Path_52 {
+	overflow: visible;
+	position: absolute;
+	width: 18.155px;
+	height: 25.138px;
+	left: 289.23px;
+	top: 175.277px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_53 {
+	fill: rgba(51,51,51,1);
+}
+.Path_53 {
+	overflow: visible;
+	position: absolute;
+	width: 59.298px;
+	height: 32.12px;
+	left: 178.825px;
+	top: 482.517px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_54 {
+	fill: rgba(51,51,51,1);
+}
+.Path_54 {
+	overflow: visible;
+	position: absolute;
+	width: 58.726px;
+	height: 31.354px;
+	left: 313.714px;
+	top: 485.31px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Rectangle_89 {
+	fill: rgba(253,165,125,1);
+}
+.Rectangle_89 {
+	position: absolute;
+	overflow: visible;
+	width: 27.931px;
+	height: 41.896px;
+	left: 191.472px;
+	top: 102.657px;
+}
+#Path_55 {
+	opacity: 0.05;
+	fill: rgba(0,0,0,1);
+}
+.Path_55 {
+	overflow: visible;
+	position: absolute;
+	width: 27.931px;
+	height: 20.948px;
+	left: 191.472px;
+	top: 104.053px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ellipse_10 {
+	fill: rgba(253,165,125,1);
+}
+.Ellipse_10 {
+	position: absolute;
+	overflow: visible;
+	width: 89.379px;
+	height: 89.379px;
+	left: 160.749px;
+	top: 34.227px;
+}
+#Path_56 {
+	opacity: 0.05;
+	fill: rgba(0,0,0,1);
+}
+.Path_56 {
+	overflow: visible;
+	position: absolute;
+	width: 89.588px;
+	height: 49.924px;
+	left: 157.955px;
+	top: 27.244px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Path_57 {
+	fill: rgba(0,0,0,1);
+}
+.Path_57 {
+	overflow: visible;
+	position: absolute;
+	width: 89.588px;
+	height: 49.924px;
+	left: 157.955px;
+	top: 25.847px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Ellipse_11 {
+	fill: rgba(253,165,125,1);
+}
+.Ellipse_11 {
+	position: absolute;
+	overflow: visible;
+	width: 9.078px;
+	height: 18.155px;
+	left: 160.749px;
+	top: 66.347px;
+}
+#Path_58 {
+	fill: rgba(0,0,0,1);
+}
+.Path_58 {
+	overflow: visible;
+	position: absolute;
+	width: 98.471px;
+	height: 49.408px;
+	left: 155.071px;
+	top: 5.794px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Rectangle_90 {
+	fill: rgba(152,212,116,1);
+}
+.Rectangle_90 {
+	position: absolute;
+	overflow: visible;
+	width: 107.593px;
+	height: 45.784px;
+	left: 0px;
+	top: 450.572px;
+}
+#Path_59_by {
+	fill: url(#Path_59_by);
+}
+.Path_59_by {
+	overflow: visible;
+	position: absolute;
+	width: 2.023px;
+	height: 2.095px;
+	left: 401.106px;
+	top: 285.022px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Line_6 {
+	fill: transparent;
+	stroke: rgba(224,224,224,1);
+	stroke-width: 8px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 10;
+	shape-rendering: auto;
+}
+.Line_6 {
+	overflow: visible;
+	position: absolute;
+	width: 80.322px;
+	height: 260.589px;
+	left: 555.804px;
+	top: 240.217px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Rectangle_91 {
+	fill: rgba(224,224,224,1);
+}
+.Rectangle_91 {
+	position: absolute;
+	overflow: visible;
+	width: 392.153px;
+	height: 15.282px;
+	left: 236.565px;
+	top: 232.649px;
+}
+#Rectangle_92 {
+	fill: rgba(83,84,97,1);
+}
+.Rectangle_92 {
+	position: absolute;
+	overflow: visible;
+	width: 64.241px;
+	height: 9.078px;
+	left: 333.222px;
+	top: 229.044px;
+}
+#Group_3 {
+	opacity: 0.7;
+	position: absolute;
+	width: 159.666px;
+	height: 110.397px;
+	left: 372.325px;
+	top: 127.838px;
+	overflow: visible;
+}
+#Rectangle_93_b {
+	fill: url(#Rectangle_93_b);
+}
+.Rectangle_93_b {
+	position: absolute;
+	overflow: visible;
+	width: 159.666px;
+	height: 110.397px;
+	left: 0px;
+	top: 0px;
+}
+#Rectangle_94 {
+	fill: rgba(62,63,73,1);
+}
+.Rectangle_94 {
+	position: absolute;
+	overflow: visible;
+	width: 151.252px;
+	height: 108.361px;
+	left: 375.172px;
+	top: 129.874px;
+}
+#Rectangle_95 {
+	fill: rgba(83,84,97,1);
+}
+.Rectangle_95 {
+	position: absolute;
+	overflow: visible;
+	width: 151.252px;
+	height: 108.361px;
+	left: 377.266px;
+	top: 129.874px;
+}
+#Ellipse_12 {
+	fill: rgba(224,224,224,1);
+}
+.Ellipse_12 {
+	position: absolute;
+	overflow: visible;
+	width: 9.776px;
+	height: 9.776px;
+	left: 455.07px;
+	top: 178.42px;
+}
+#Component_3__1 {
+	position: absolute;
+	width: 36px;
+	height: 36px;
+	left: 301px;
+	top: 373px;
+	overflow: visible;
+}
+#Rectangle_96_ca {
+	fill: url(#Rectangle_96_ca);
+}
+.Rectangle_96_ca {
+	position: absolute;
+	overflow: visible;
+	width: 36px;
+	height: 36px;
+	left: 0px;
+	top: 0px;
+}
+#Icon_awesome-user-tie {
+	fill: rgba(248,248,248,1);
+}
+.Icon_awesome-user-tie {
+	overflow: visible;
+	position: absolute;
+	width: 16.782px;
+	height: 21.465px;
+	left: 10px;
+	top: 7px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#Register_Here {
+	left: 347px;
+	top: 370px;
+	position: absolute;
+	overflow: visible;
+	width: 225px;
+	white-space: nowrap;
+	line-height: 65px;
+	margin-top: -14.5px;
+	text-align: left;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 36px;
+	color: rgba(30,30,30,1);
+}
