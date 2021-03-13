@@ -3,6 +3,7 @@ from .models import *
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import *
+from .filters import *
 
 
 
@@ -76,6 +77,10 @@ def index(request):
 def expenseDetail(request):
     expenses = Expense.objects.filter(user = request.user).order_by('-date')
     categories = Category.objects.all()
+
+    myFilter = ExpenseFilter(request.GET, queryset=expenses)
+    expenses = myFilter.qs
+
     list1 = []
     catlist = []
     b=1
@@ -96,7 +101,8 @@ def expenseDetail(request):
         'sum':sum,
         'categories':categories,
         'list':list1,
-        'catlist':catlist
+        'catlist':catlist,
+        'myFilter' : myFilter
 
     }
     return render(request, 'expense/expensesdetail.html', context)
@@ -147,8 +153,12 @@ def incomeDetail(request):
     incomes = Income.objects.filter(user = request.user)
     categories = IncomeCategory.objects.all()
 
+    myFilter = IncomeFilter(request.GET, queryset=incomes)
+    incomes = myFilter.qs
+
     context = {
-        'incomes': incomes
+        'incomes': incomes,
+        'myFilter' : myFilter
     }
     return render(request, 'expense/incomedetail.html', context)
 

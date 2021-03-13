@@ -13,7 +13,6 @@ class Category(models.Model):
 
 
 
-
 class Expense(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     title = models.CharField(max_length=101)

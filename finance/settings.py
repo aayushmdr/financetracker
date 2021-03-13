@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'expense',
     'users',
     'widget_tweaks',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
