@@ -1,0 +1,20 @@
+{% extends "expense/base.html" %}
+
+{% block content %}
+<div class="text-container">
+    <h5 class="display-4">All your incomes in one place,</h5>
+</div>
+Title: {{ income }}
+Date Posted: {{ income.date }} </br>
+Category: {{ income.category }} </br>
+Amount: {{ income.amount }} </br>
+Description: {{ income.description }} </br>
+Image: <img src="{{ income.image.url }}" alt="Image cannot be loaded!"> </br>
+
+
+ <div class="btn-group">
+                  <a class="btn btn-sm btn-info" href="{% url 'update_income' income.id %}">Update</a>
+                  <a class="btn btn-sm btn-danger" href="{% url 'delete_income' income.id %}">Delete</a>
+ </div>
+
+{% endblock %}

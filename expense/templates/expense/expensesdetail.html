@@ -28,8 +28,8 @@
                 <td>{{ expense }}</td><td>{{ expense.amount }}</td><td>{{ expense.category }}</td><td align="center">
 
                 <div class="btn-group">
-                  <a class="btn btn-sm btn-info" href="{% url 'update_expense' expense.id %}">Update</a>
-                  <a class="btn btn-sm btn-danger" href="{% url 'delete_expense' expense.id %}">Delete</a>
+                  <a class="btn btn-sm btn-info" href="{% url 'detail_expense' expense.id %}">Details</a>
+
                 </div>
 
               </td></tr>

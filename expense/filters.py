@@ -15,7 +15,7 @@ class ExpenseFilter(django_filters.FilterSet):
     class Meta:
         model = Expense
         fields = '__all__'
-        exclude = ['user','amount','title','date']
+        exclude = ['user','amount','title','date','image']
 
 
 
@@ -29,4 +29,4 @@ class IncomeFilter(django_filters.FilterSet):
     class Meta:
         model = Income
         fields = '__all__'
-        exclude = ['user','amount','title','date']
+        exclude = ['user','amount','title','date','image']

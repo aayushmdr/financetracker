@@ -1,0 +1,20 @@
+{% extends "expense/base.html" %}
+
+{% block content %}
+<div class="text-container">
+    <h5 class="display-4">All your expenses in one place,</h5>
+</div>
+Title: {{ expense }}
+Date Posted: {{ expense.date }} </br>
+Category: {{ expense.category }} </br>
+Amount: {{ expense.amount }} </br>
+Description: {{ expense.description }} </br>
+Image: <img src="{{ expense.image.url }}" alt="Image cannot be loaded!"> </br>
+
+
+ <div class="btn-group">
+                  <a class="btn btn-sm btn-info" href="{% url 'update_expense' expense.id %}">Update</a>
+                  <a class="btn btn-sm btn-danger" href="{% url 'delete_expense' expense.id %}">Delete</a>
+ </div>
+
+{% endblock %}

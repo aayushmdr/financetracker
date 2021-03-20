@@ -108,9 +108,20 @@ def expenseDetail(request):
     return render(request, 'expense/expensesdetail.html', context)
 
 @login_required()
+def detailExpense(request, pk):
+    expense = Expense.objects.get(id = pk)
+
+    context = {
+        'expense': expense,
+
+
+    }
+    return render(request, 'expense/expensedetail.html', context)
+
+@login_required()
 def addExpense(request):
     if request.method == 'POST':
-        form = ExpenseForm(request.POST)
+        form = ExpenseForm(request.POST, request.FILES)
 
         if form.is_valid():
             instance = form.save(commit=False)
@@ -148,6 +159,17 @@ def deleteExpense(request, pk):
         'expense':expense
     }
     return render(request, 'expense/delete.html', context)
+
+@login_required()
+def detailIncome(request, pk):
+    income = Income.objects.get(id = pk)
+
+    context = {
+        'income': income,
+
+
+    }
+    return render(request, 'expense/single_income.html', context)
 
 def incomeDetail(request):
     incomes = Income.objects.filter(user = request.user)

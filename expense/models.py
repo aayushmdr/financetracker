@@ -19,6 +19,8 @@ class Expense(models.Model):
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateField(default= datetime.now)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="images/expenses", default='images/expenses/default.jpg', blank=True)
+    description = models.TextField(blank = True)
 
     def __str__(self):
         return self.title
@@ -36,6 +38,8 @@ class Income(models.Model):
     amount = models.DecimalField(max_digits=8, decimal_places=2)
     date = models.DateField(default=datetime.now)
     category = models.ForeignKey(IncomeCategory, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="images/incomes", default='images/expenses/default.jpg', blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
