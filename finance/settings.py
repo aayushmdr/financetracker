@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'users',
     'widget_tweaks',
     'django_filters',
+    'django_extensions',
+
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,8 @@ LOGIN_REDIRECT_URL = 'login_success'
 LOGIN_URL = 'login'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
