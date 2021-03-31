@@ -8,6 +8,7 @@ urlpatterns = [
     path('update_exp/<str:pk>', views.updateExpense, name="update_expense"),
     path('delete_exp/<str:pk>', views.deleteExpense, name="delete_expense"),
     path('detail_exp/<str:pk>', views.detailExpense, name="detail_expense"),
+    path('add_category/', views.addCategory, name="add_category"),
 
     path('addIncome/',views.addIncome, name= 'add_income'),
     path('all_incomes/',views.incomeDetail, name= 'all_incomes'),

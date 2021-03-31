@@ -1,119 +1,158 @@
-{% extends "expense/base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
 
-{% block content %}
-<div class="text-container">
-    <h5 class="display-4">All your expenses in one place,</h5>
-</div>
-<form method="GET">
-      {{ myFilter.form }}
-    <button class="btn btn-primary" type="submit">Search</button>
-</form>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <div class="row">
-        <div class="col-6 offset-md-1">
-                    <table class="table table-striped" border="1px" >
-            <thead>
-              <tr>
-                  <th>Date</th>
-                <th>Title</th>
-                <th>Amount</th>
-                <th>Category</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-               {% for expense in expenses %}
-                  <td>{{expense.date|date:"F d, Y"}}</td>
-                <td>{{ expense }}</td><td>{{ expense.amount }}</td><td>{{ expense.category }}</td><td align="center">
+    <title>All Expenses</title>
 
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-info" href="{% url 'detail_expense' expense.id %}">Details</a>
+    <!-- Custom fonts for this template -->
+    <link href="{% static 'expense/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <link
+            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="{% static 'expense/css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="{% static 'expense/vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    {% include "expense/sidebar.html" %}
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            {% include "expense/topbar.html" %}
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">All Expenses</h1>
+                <p class="mb-4">You can find all your recorded expenses organized here.</p>
+
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary"><a href="{% url 'add_expense' %}" class="btn btn-primary" role="button">
+                            Add an expense</a></h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-right">
+                            <button data-toggle="collapse" data-target="#demo" class="btn btn-info btn-sm">Advanced Seach</button> </div> </br>
+                        <div id="demo" class="collapse">
+                            <form method="GET">
+                                {{ myFilter.form }}
+                                <button class="btn btn-primary" type="submit">Search</button>
+                            </form>
+
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Title</th>
+                                    <th>Amount</th>
+                                    <th>Category</th>
+                                    <th></th>
+
+                                </tr>
+                                </thead>
+                                <!--                                <tfoot>-->
+                                <!--                                <tr>-->
+                                <!--                                    <th>Date</th>-->
+                                <!--                                    <th>Title</th>-->
+                                <!--                                    <th>Amount</th>-->
+                                <!--                                    <th>Category</th>-->
+                                <!--                                    <th></th>-->
+                                <!--                                </tr>-->
+                                <!--                                </tfoot>-->
+                                <tbody>
+                                <tr>
+                                    {% for expense in expenses %}
+                                    <td>{{expense.date|date:"F d, Y"}}</td>
+                                    <td>{{ expense }}</td>
+                                    <td>{{ expense.amount }}</td>
+                                    <td>{{ expense.category }}</td>
+                                    <td align="center">
+
+                                        <div class="btn-group">
+                                            <a class="btn btn-sm btn-info" href="{% url 'detail_expense' expense.id %}">Details</a>
+
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
-              </td></tr>
-                {% endfor %}
-            </tbody>
-          </table>
-             <a href="{% url 'add_expense' %}" class="btn btn-primary" role="button">Add an expense</a>
-        </div>
-
-
-
-        <div class="col-md-4 offset-md-0">
-            <h3 class="display-4">Chart-view</h3>
-            <div class="chart">
-            <canvas id="myChart" width="100" height="100"></canvas>
-            <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            <!--ctx.canvas.parentNode.style.width = "200px";-->
-            <!--ctx.canvas.parentNode.style.height = "200px";-->
-
-            var myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: [{% for category in catlist %}'{{ category }}',{% endfor %}],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [{% for list in list %} {{ list }}, {% endfor %}],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(119, 158, 203, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)',
-                            'rgba(149, 125, 173, 0.2)',
-                            'rgba(200, 100, 87, 0.2)',
-                            'rgba(211, 139, 45, 0.2)',
-                            'rgba(215, 169, 40, 0.2)',
-                            'rgba(254, 145, 188, 0.2)',
-                            'rgba(109, 188, 190, 0.2)',
-                            'rgba(206, 207, 195, 0.2)',
-                            'rgba(229, 229, 231, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(149, 125, 173, 1)',
-                            'rgba(245, 154, 70, 0.2)',
-                            'rgba(200, 100, 87, 0.2)',
-                            'rgba(211, 139, 45, 0.2)',
-                            'rgba(215, 169, 40, 0.2)',
-                            'rgba(254, 145, 188, 0.2)',
-                            'rgba(109, 188, 190, 0.2)',
-                            'rgba(206, 207, 195, 0.2)',
-                            'rgba(229, 229, 231, 0.2)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-
-                    scales: {
-                        yAxes: [{
-                            display: false,
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-            </script>
             </div>
+            <!-- /.container-fluid -->
+
         </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Aayush Manandhar, 2021</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
 
     </div>
+    <!-- End of Content Wrapper -->
 
+</div>
+<!-- End of Page Wrapper -->
 
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
 
+{% include "expense/logoutmodal.html" %}
 
+<!-- Bootstrap core JavaScript-->
+<script src="{% static 'expense/vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'expense/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
+<!-- Core plugin JavaScript-->
+<script src="{% static 'expense/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
+<!-- Custom scripts for all pages-->
+<script src="{% static 'expense/js/sb-admin-2.min.js' %}"></script>
 
-{% endblock %}
+<!-- Page level plugins -->
+<script src="{% static 'expense/vendor/datatables/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'expense/vendor/datatables/dataTables.bootstrap4.min.js' %}"></script>
+
+<!-- Page level custom scripts -->
+<script src="{% static 'expense/js/demo/datatables-demo.js' %}"></script>
+
+</body>
+
+</html>

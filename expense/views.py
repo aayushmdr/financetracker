@@ -130,7 +130,19 @@ def addExpense(request):
             return redirect('all_expenses')
     else:
         form = ExpenseForm()
-    return render(request, 'expense/addexpense.html',{'form':form})
+    return render(request, 'expense/addexpense.html',{'form':form, 'catform': AddCategoryForm})
+
+def addCategory(request):
+    if request.method == 'POST':
+        form = AddCategoryForm(request.POST)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+            return redirect('add_expense')
+        else:
+            form = AddCategoryForm()
+        return render(request, 'expense/addexpense.html', {'catform': AddCategoryForm})
 
 def updateExpense(request, pk):
     expense = Expense.objects.get(id = pk)
@@ -197,6 +209,7 @@ def addIncome(request):
         form = IncomeForm()
     return render(request, 'expense/addincome.html',{'form':form})
 
+@login_required()
 def updateIncome(request, pk):
     income = Income.objects.get(id = pk)
     form = IncomeForm(instance=income)
@@ -213,7 +226,7 @@ def updateIncome(request, pk):
     }
     return render(request, 'expense/update_income.html',context)
 
-
+@login_required()
 def deleteIncome(request, pk):
     income = Income.objects.get(id = pk)
     if request.method=='POST':

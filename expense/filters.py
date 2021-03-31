@@ -7,7 +7,7 @@ from .models import *
 
 
 class ExpenseFilter(django_filters.FilterSet):
-    title = CharFilter(field_name='title', lookup_expr='icontains')
+    title = CharFilter(field_name='title', lookup_expr='icontains', label='Title')
     start_date = DateFilter(field_name="date", lookup_expr='gte', label='Start date')
     end_date = DateFilter(field_name="date", lookup_expr='lte', label='End date')
     amount_greater_than = NumberFilter(field_name='amount', lookup_expr='gt', label='Amount more than')
@@ -15,13 +15,13 @@ class ExpenseFilter(django_filters.FilterSet):
     class Meta:
         model = Expense
         fields = '__all__'
-        exclude = ['user','amount','title','date','image']
+        exclude = ['user','amount','title','date','image','description']
 
 
 
 
 class IncomeFilter(django_filters.FilterSet):
-    title = CharFilter(field_name='title', lookup_expr='icontains')
+    title = CharFilter(field_name='title', lookup_expr='icontains',label='Title')
     start_date = DateFilter(field_name="date", lookup_expr='gte', label='Start date' )
     end_date = DateFilter(field_name="date", lookup_expr='lte', label='End date')
     amount_greater_than = NumberFilter(field_name='amount', lookup_expr='gt', label='Amount more than')
@@ -29,4 +29,4 @@ class IncomeFilter(django_filters.FilterSet):
     class Meta:
         model = Income
         fields = '__all__'
-        exclude = ['user','amount','title','date','image']
+        exclude = ['user','amount','title','date','image','description']
