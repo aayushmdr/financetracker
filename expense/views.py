@@ -36,15 +36,18 @@ def index(request):
     balance = ''
     difference = ''
     expenses = Expense.objects.filter(user = request.user)
+    expenses1 = Expense.objects.filter(user = request.user)
     all_incomes = Income.objects.filter(user = request.user)
     startamt = StartAmt.objects.filter(user = request.user)
     firstFiveexp = Expense.objects.filter(user = request.user).order_by('-date')[:5]
     firstFiveinc = Income.objects.filter(user = request.user).order_by('-date')[:5]
+    categories = Category.objects.all()
 
-    sum = 0
+    sum1 = 0
     a=0
-    for expense in expenses:
-        sum += expense.amount
+    for exp in expenses:
+        sum1 += exp.amount
+        print(sum1)
 
     Incomesum = 0
     for income in all_incomes:
@@ -54,20 +57,38 @@ def index(request):
         a = bal.amount
 
     if a>0:
-        balance = (a+Incomesum)-sum
-        difference = sum-(Incomesum+a)
+        balance = (a+Incomesum)-sum1
+        difference = sum1-(Incomesum+a)
+
+    list1 = []
+    catlist = []
+    b = 1
+    sum = 0
+    for cat in categories:
+        cat1 = Expense.objects.filter(category=b, user=request.user)
+        cat2 = Category.objects.get(id=b)
+        catlist.append(cat2)
+        for cat in cat1:
+            sum += cat.amount
+
+        list1.append(sum)
+        sum = 0
+        b += 1
+
 
 
     context = {
         'expenses':expenses,
         'incomes': all_incomes,
-        'totalexp':sum,
+        'totalexp':sum1,
         'totalIncome':Incomesum,
         'diff':difference,
         'firstFiveexp':firstFiveexp,
         'firstFiveinc':firstFiveinc,
         'balance':balance,
         'start':startamt,
+        'list': list1,
+        'catlist': catlist,
 
 
     }
